@@ -1,9 +1,11 @@
 // import npm packages
+import "dotenv/config.js"   //part 2
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
+import './config/database.js' //part 2
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
