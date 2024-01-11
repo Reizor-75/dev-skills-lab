@@ -7,5 +7,13 @@
 </head>
 <body>
   <h1>Skills</h1>
+  <ul>
+    <% skills.forEach(skill => { %>
+      <li>
+				<%= skill.text %> 
+				- 
+				<%= skill.level%>
+			</li>
+    <% }) %>
 </body>
 </html>
