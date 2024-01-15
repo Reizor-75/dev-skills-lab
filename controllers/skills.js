@@ -10,7 +10,8 @@ function index(req, res) {
   Skill.find({})
     .then(skills =>{
       res.render('skills/index', {
-        skills: skills
+        skills: skills,
+        time: req.time
       })
     })
     .catch(error => { 
@@ -48,9 +49,15 @@ function show(req, res){
     })
 }
 
+function deleteSkill(req, res){
+
+}
+
+
 export {
 	index,
   newSkill as new,
   create,
-  show
+  show,
+  deleteSkill as delete,
 }
