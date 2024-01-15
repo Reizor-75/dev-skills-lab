@@ -11,6 +11,8 @@ router.get('/new', skillsCtrl.new)
 router.get('/:skillId', skillsCtrl.show)
 // GET localhost:3000/skills/:todoId/edit
 router.get('/:skillId/edit', skillsCtrl.edit)
+// PUT localhost:3000/todos/:todoId/update
+router.put('/:skillId', skillsCtrl.update)
 // POST localhost:3000/skills/
 router.post('/', skillsCtrl.create)
 // DELETE localhost:3000/skills/
