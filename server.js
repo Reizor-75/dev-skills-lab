@@ -5,6 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
+import methodOverride from 'method-override'  //part 4
 import './config/database.js' //part 2
 
 // import routers
@@ -33,6 +34,8 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+
+app.use(methodOverride('_method')) // part 4
 
 // mount imported routes
 app.use('/', indexRouter)
