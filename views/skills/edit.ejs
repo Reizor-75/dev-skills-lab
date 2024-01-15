@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Skill</title>
+</head>
+<body>
+  <h1>New Skill</h1>
+  <form action="/skills/<%=skill._id%>?_method=PUT" method="POST" autocomplete="off">
+    <input value="<%=skill.text%>" type="text" name="text">
+
+    <!-- I feel like there is a much better way to do this but I'm not sure how to (yet) -->
+    <select name="level"> 
+      <% if(skill.level === "Beginner") {%>
+      <option value="Beginner" selected>Beginner</option>
+      <option value="Intermediate">Intermediate</option> 
+      <option value="Expert">Expert</option> 
+      <%} else if(skill.level === "Intermediate") {%>
+      <option value="Beginner">Beginner</option>
+      <option value="Intermediate" selected>Intermediate</option> 
+      <option value="Expert">Expert</option> 
+      <%} else if(skill.level === "Expert") {%>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate" >Intermediate</option> 
+        <option value="Expert" selected>Expert</option> 
+      <%}%>
+    </select>
+    <button type="submit">Save new skill</button>
+  </form>
+</body>
+</html>

@@ -7,11 +7,13 @@ const router = Router()
 router.get('/', skillsCtrl.index)
 // GET localhost:3000/skills/new
 router.get('/new', skillsCtrl.new)
-// GET localhost:3000/skills/new
+// GET localhost:3000/skills/:todoId
 router.get('/:skillId', skillsCtrl.show)
+// GET localhost:3000/skills/:todoId/edit
+router.get('/:skillId/edit', skillsCtrl.edit)
 // POST localhost:3000/skills/
 router.post('/', skillsCtrl.create)
-// POST localhost:3000/skills/
+// DELETE localhost:3000/skills/
 router.delete('/:skillId', skillsCtrl.delete)
 
 export { router }
